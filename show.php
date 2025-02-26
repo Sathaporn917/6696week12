@@ -1,5 +1,7 @@
 <?php
 include("conn.php");
+//session_start(); //เริ่มใช้งานตัวเเปร session
+include("clogin.php");
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +67,8 @@ include("conn.php");
     ?>
 
     <h1>แสดงข้อมูลพนักงาน</h1>
-    <h2>พัฒนาโดย 664485025 นายสถาพร  ทิพย์ไปรยา </h2>
+    <h2>ผู้เข้าสู่ระบบ : <?php echo $_SESSION["u_name"]; ?>หน่วยงาน : <?php echo $_SESSION["u_department"]; ?></h2>
+    
     <table id="example" class="table table-striped" style="width:100%">
         <thead>
             <tr>
@@ -115,6 +118,8 @@ include("conn.php");
 
         </tfoot>
     </table>
+
+    <h2>พัฒนาโดย 664485025 นายสถาพร  ทิพย์ไปรยา </h2>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
